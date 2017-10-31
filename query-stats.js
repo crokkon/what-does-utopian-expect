@@ -5,7 +5,7 @@ function colHeader(title) {
 }
 
 function tblCell(content) {
-  if (typeof(content) == float) {
+  if (typeof(content) == 'number') {
     content = content.toFixed(1);
   }
   return "<td>" + content + "</td>";
