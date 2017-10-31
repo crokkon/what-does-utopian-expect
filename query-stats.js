@@ -6,7 +6,7 @@ function colHeader(title) {
 
 function tblCell(content) {
   if (typeof(content) == 'number') {
-    content = content.toFixed(1);
+    content = Math.round(content);
   }
   return "<td>" + content + "</td>";
 }
