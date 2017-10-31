@@ -15,9 +15,18 @@ var results = JSON.parse(xhr.response);
 var stats = results.stats;
 var votes = stats.votes;
 var categories = stats.categories;
-document.write("<table class=\"table\"><thead><tr>" + colHeader("Category") + colHeader("Total Posts") + "</tr></thead><tbody>");
+var html = "<table class=\"table\"><thead><tr>" + 
+    colHeader("Category") + colHeader("Total Posts") + 
+    colHeader("Avg. post length") + colHeader("Avg. images/post") + 
+    ColHeader("Avg. links/post") + ColHeader("Avg. tags/post") +
+    "</tr></thead><tbody>";
+document.write();
 for (var key in categories) {
   c = categories[key];
-  document.write("<tr><th scope=\"row\">" + key + "</th>" + tblCell(c.total_posts) + "</tr>");
+  html += "<tr><th scope=\"row\">" + key + "</th>" + 
+    tblCell(c.total_posts) + tblCell(c.average_posts_length) +
+    tblCell(c.average_images_per_post) + tblCell(c.average_links_per_post) +
+    tblCell(c.average_tags_per_post) + "</tr>";
 }
-document.write("</tbody></table>");
+html += "</tbody></table>";
+document.write(html);
