@@ -1,10 +1,10 @@
 var url = "https://api.utopian.io/api/stats";
 
-function colHeader(var title) {
+function colHeader(title) {
   return "<th scope=\"col\">" + title + "</th>";
 }
 
-function tblCell(var content) {
+function tblCell(content) {
   return "<td>" + content + "</td>";
 }
 
@@ -15,7 +15,7 @@ var results = JSON.parse(xhr.response);
 var stats = results.stats;
 var votes = stats.votes;
 var categories = stats.categories;
-document.write("<table class="table"><thead><tr>" + colHeader("Category) + colHeader("Total Posts") + </tr></thead><tbody>");
+document.write("<table class=\"table\"><thead><tr>" + colHeader("Category") + colHeader("Total Posts") + "</tr></thead><tbody>");
 for (var key in categories) {
   c = categories[key];
   document.write("<tr><th scope=\"row\">" + key + "</th>" + tblCell(c.total_posts) + "</tr>");
