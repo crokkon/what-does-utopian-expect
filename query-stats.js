@@ -2,10 +2,12 @@ var url = "https://api.utopian.io/api/stats";
 
 function colHeader(var title) {
   return "<th scope=\"col\">" + title + "</th>";
+}
 
 function tblCell(var content) {
   return "<td>" + content + "</td>";
-  
+}
+
 var xhr = new XMLHttpRequest();
 xhr.open("GET", url, false);
 xhr.send();
