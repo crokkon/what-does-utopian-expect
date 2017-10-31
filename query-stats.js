@@ -18,9 +18,8 @@ var categories = stats.categories;
 var html = "<table class=\"table\"><thead><tr>" + 
     colHeader("Category") + colHeader("Total Posts") + 
     colHeader("Avg. post length") + colHeader("Avg. images/post") + 
-    ColHeader("Avg. links/post") + ColHeader("Avg. tags/post") +
+    ColHeader("Avg. links/post") + colHeader("Avg. tags/post") +
     "</tr></thead><tbody>";
-document.write();
 for (var key in categories) {
   c = categories[key];
   html += "<tr><th scope=\"row\">" + key + "</th>" + 
